@@ -1,0 +1,39 @@
+ALGORITHM sum
+VAR
+  set1 : ARRAY_OF INTEGER[3]; 
+  set2 : ARRAY_OF INTEGER[4]; 
+  i : INTEGER;
+  j : INTEGER; 
+  
+  cont : INTEGER;
+  sum: INTEGER:=0;
+BEGIN
+   set1  := {3, 1, 7, 9};
+   set2  := {2, 4, 1, 9, 3}; 
+  Write('Print Array :')
+  FOR i FROM 0 TO 3 STEP 1  DO   ;
+  Write(set1[i]) 
+  END_FOR
+  FOR i FROM 0 TO 4 STEP 1  DO   ;
+  Write(set2[j]) 
+  END_FOR
+
+  FOR i FROM 0 TO i< set1.length Do
+
+  i:=i+1;
+  cont:=set1[i]
+  FOR i FROM 0 TO i< set2.length Do
+
+  i:=i+1;
+  cont:=set2[j]
+  IF (set1[i] == set2[j]) THEN
+  cont:= set1[i]+ set2[j]
+  cont:=sum
+  sum:=sum+1;
+
+  ENF_IF
+  i:=i+1;
+  END_FOR
+  END_FOR
+  Write(sum)
+END
