@@ -4,6 +4,7 @@ VAR
   set2 : ARRAY_OF INTEGER[4]; 
   i : INTEGER;
   j : INTEGER; 
+  true: BOOLEAN;
   
   cont : INTEGER;
   sum: INTEGER:=0;
@@ -18,31 +19,36 @@ BEGIN
   Write(set2[j]) 
   END_FOR
 
-  FOR i FROM 0 TO i< set1.length by step 1 Do
-
   
-  cont:=set1[i]
+   sum:=sum+0;
   FOR i FROM 0 TO i< set2.length by step 1 Do
-
- 
-  cont:=set2[j]
-  IF (set1[0] <> set2[j] and set1[1] <> set2[j] and set1[2] <> set2[j] and set1[3] <> set2[j]) THEN
-  cont:= set1[i]+ set2[j]
-  cont:=sum
-  sum:=sum+1;
+  FOR j FROM 0 TO j< set2.length by step 1 Do
+  cont:= set1[i]
+  IF(cont <>set2[j]) THEN
+   return true
+    i:=i+1;
+   ELSE
+   
+   return false
+   j:=j-1
   
-  ENF_IF
-  ELSE
-  i:=i+1;
-  IF (set2[0] <> set1[i] and set2[1] <> set1[i]  and set2[2] <> set1[i]  and set2[3] <> set1[i]  and set2[4] <> set1[i]) THEN
-  cont:= set1[i]+ set2[j]
+   ENF_IF
+  
+ FOR i FROM 0 TO i< set2.length by step 1 Do
+  FOR j FROM 0 TO j< set2.length by step 1 Do
+  cont:= set1[j]
+  IF(cont <>set2[i]) THEN
+   return true
+    j:=j+1;
+   ELSE
+   return false
+   j:=j-1
+  
+   ENF_IF
+  
   cont:=sum
-  sum:=sum+1;
-  ENF_IF
-  ELSE
-  j:=j+1;
-
-
+ 
+  
   END_FOR
   END_FOR
   Write(sum)
