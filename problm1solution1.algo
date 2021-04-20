@@ -26,9 +26,11 @@ BEGIN
   
   IF(set1[i] <>set2[j]) THEN
   distinct:=true;
+  ENF_IF
   END_FOR
-  if(distinct==true)
+  IF(distinct==true)
   sum:=sum+ set1[i]
+  END_IF
   END_FOR
     
   FOR j FROM 0 TO set1.length-1 by step 1 Do
@@ -36,9 +38,11 @@ BEGIN
   
   IF(set1[i] <>set2[j]) THEN
   distinct:=true;
+  END_IF
   END_FOR
   IF(distinct==true) THEN
   sum:=sum+ set2[j]
+  END_IF
   END_FOR
   Write(sum)
 END

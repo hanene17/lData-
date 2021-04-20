@@ -27,13 +27,12 @@ BEGIN
   map.put(element, count+1);
   ELSE
   map.put(element, 1);
-  ELSE
-  i:=i+1;
+ 
   END_IF
   END_FOR 
 
   FOR j FROM 0 TO  set2.length-1 STEP 1 
-  j:=j+1; 
+  
   DO  
   element := set2[j];
   IF(map.containsKey(element)) THEN
@@ -41,8 +40,7 @@ BEGIN
   map.put(element, count+1);
   ELSE
   map.put(element, 1);
-  ELSE
-  j:=j+1; 
+ 
   END_IF
   END_FOR
 
