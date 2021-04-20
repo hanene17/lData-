@@ -25,8 +25,8 @@ BEGIN
    Write(set2[j]) 
    END_FOR
 
-   FOR i FROM 0 TO  set1.length STEP 1 
-   FOR j FROM 0 TO  set2.length STEP 1
+   FOR i FROM 0 TO  set1.length-1 STEP 1 
+   FOR j FROM 0 TO  set2.length-1 STEP 1
    DO  
    htab.insert(str[i],"cont1");
    htab.insert(str[j],"cont2");
@@ -38,17 +38,27 @@ BEGIN
    cont2 := htab.get(str[j]);
    ENF_IF
          
-   IF (set1[i] == set2[j]) THEN
-   cont:= cont1+ cont2
-   cont:=sum
-   sum:=sum+1;
-   BREAK;
-   ENF_IF
-   ELSE
-   i:=i+1;
-   END_FOR
-   END_FOR
-  Write(sum);
+  sum:=sum+0;
+  FOR i FROM 0 TO set1.length-1 by step 1 Do
+  FOR j FROM 0 TO set2.length-1 by step 1 Do
+  
+  IF(cont1 <> cont2) THEN
+  distinct:=true;
+  END_FOR
+  if(distinct==true)
+  sum:=sum+ cont1
+  END_FOR
+    
+  FOR j FROM 0 TO set1.length-1 by step 1 Do
+  FOR i FROM 0 TO set2.length-1 by step 1 Do
+  
+  IF(cont1 <>cont2) THEN
+  distinct:=true;
+  END_FOR
+  IF(distinct==true) THEN
+  sum:=sum+ cont2
+  END_FOR
+  Write(sum)
 
 END
 

@@ -18,7 +18,7 @@ BEGIN
   set2  := {13, 10, 16, 15};
 
 
-  FOR i FROM 0 TO  set1.length STEP 1 
+  FOR i FROM 0 TO  set1.length-1 STEP 1 
  
   DO  
   element := set1[i];
@@ -32,7 +32,7 @@ BEGIN
   END_IF
   END_FOR 
 
-  FOR j FROM 0 TO  set2.length STEP 1 
+  FOR j FROM 0 TO  set2.length-1 STEP 1 
   j:=j+1; 
   DO  
   element := set2[j];
